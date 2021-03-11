@@ -93,9 +93,12 @@
   btns.forEach(btn => btn.addEventListener('click', function(e) {
     console.log(this.id)
   }));
-  // btns.forEach(btn => btn.addEventListener('click', buttonSound));
-
-  // btns.forEach(btn => btn.addEventListener('click', buttonSound))
+  const clicks = Array.from(document.querySelectorAll('.key'))
+  clicks.forEach((press) => {
+    press.addEventListener('click', () => {
+      playSoundClick(press.getAttribute('data-key'))
+    })
+  })
   
   console.log(this.id)
 </script>
